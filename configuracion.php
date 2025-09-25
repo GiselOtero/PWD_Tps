@@ -6,6 +6,7 @@ header ("Cache-Control: no-cache, must-revalidate ");
 /////////////////////////////
 
 $PROYECTO ='TP_PWD';
+// $PROYECTO ='PWD_Tps'; 
 
 
 //variable que almacena el directorio del proyecto

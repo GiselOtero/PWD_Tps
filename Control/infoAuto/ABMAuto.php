@@ -239,4 +239,24 @@ class ABMAuto{
         return $salida;
 
     }
+
+    public function eliminarAuto($param){
+        $salida = array(
+            "guardado" => false,
+            "respuesta" => "",
+            "link" => "",
+        );
+        $param["accion"]= "borrar";
+        if($this->accion($param)){
+            $salida["guardado"] = true;
+            $salida["respuesta"] = " Se Elimino correctamente ";
+            $salida["link"]="listaAuto.php";
+        }else{
+             $salida["guardado"] = false;
+            $salida["respuesta"] = " No se elimino correctamente ";
+            $salida["link"]="listaAuto.php";
+        }
+
+        return $salida;
+    }
 }

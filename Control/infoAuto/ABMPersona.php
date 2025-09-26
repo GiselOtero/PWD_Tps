@@ -159,6 +159,7 @@ class ABMPersona{
             "respuesta" => "",
             "error" => "",
             "link" => "",
+            "autosAsociados" => false,
         );
 
         $controlAuto = new ABMAuto();
@@ -172,7 +173,7 @@ class ABMPersona{
             
             $salida["link"] = "accionBuscarPersonaAuto.php?NroDni=".$param["NroDni"];
 
-            $salida ["error"] = "";
+            $salida ["autosAsociados"] = true;
 
         }else{
             $param["accion"] = "borrar";

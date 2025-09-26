@@ -10,6 +10,17 @@ if (isset($datos["NroDni"])) {
     $listaPersonas = $obj->buscar($datos);
 }
 
+
+if(isset($datos["mensaje"])){
+?>
+<div class="my-2" id="mensaje-alert"> <?php echo $datos["mensaje"] ?></div>
+
+<?php
+
+
+}
+
+
 if (count($listaPersonas) > 0) {
 ?>
     <div class="table-responsive">
@@ -73,7 +84,22 @@ if (count($listaPersonas) > 0) {
         </table>
 
     </div>
-    <a class="btn btn-primary" type="btn" href="index.php">Menu</a>
+    <div class="my-4">
+        <a class="btn btn-primary" type="btn" href="formPersona.php">Agregar</a>
+        <a class="btn btn-secondary" type="btn" href="index.php">Menu</a>
+    </div>
+
+
+
+    <script>
+    // Espera 4 segundos y luego oculta el mensaje
+    setTimeout(function() {
+        var alerta = document.getElementById('mensaje-alert');
+        if (alerta) {
+            alerta.style.display = 'none';
+        }
+    }, 10000); // 4000 milisegundos = 4 segundos
+</script>
     <?php
     include_once "../Estructura/footer.php";
     ?>

@@ -5,13 +5,16 @@ $datos = data_submitted();
 //print_r($datos);
 $controlPersona = new ABMPersona();
 $accion = $controlPersona->abmAccion($datos);
-
+$respuesta = "";
 
 if($accion){
-    echo "La accion ".$datos["accion"]." se realizo correctamente";
+    $respuesta= "La accion ".$datos["accion"]." se realizo correctamente";
 }else{
-    echo "La accion ".$datos["accion"]." no se realizo correctamente";
+    $respuesta= "La accion ".$datos["accion"]." no se realizo correctamente";
 
 } 
+
+header("Location: listaPersona.php?mensaje=".$respuesta);
+    exit;
 
 ?>

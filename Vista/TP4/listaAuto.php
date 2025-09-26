@@ -8,6 +8,16 @@ if (isset($datos["Patente"])) {
     $listaAutos = $obj->buscar($datos);
 }
 
+if(isset($datos["mensaje"])){
+?>
+<div class="my-2" id="mensaje-alert"> <?php echo $datos["mensaje"] ?></div>
+
+<?php
+
+
+}
+
+
 if (count($listaAutos) > 0) {
 ?>
     <div class="table-responsive">
@@ -36,6 +46,7 @@ if (count($listaAutos) > 0) {
                     <td>
                         <div class="btn-group">
                             <a href="formAuto.php?Patente=<?php echo $unAuto->getPatente() ?>" class="btn btn-primary">Editar</a>
+                            <a class="btn btn-danger" href="accionEliminarAuto.php?Patente=<?php echo $unAuto->getPatente() ?>" >Eliminar</a>
                             <!--<a href="#" class="btn btn-primary">Link</a> -->
                         </div>
                     </td>
@@ -64,8 +75,21 @@ if (count($listaAutos) > 0) {
         </table>
 
     </div>
-<a  class="btn btn-primary" type="btn" href="index.php">Menu</a>
+<div class="my-4">
+    <a class="btn btn-primary" href="formAuto.php">Agregar nuevo auto</a>
+    <a  class="btn btn-secondary" type="btn" href="index.php">Menu</a>
+</div>
 
+
+<script>
+    // Espera 4 segundos y luego oculta el mensaje
+    setTimeout(function() {
+        var alerta = document.getElementById('mensaje-alert');
+        if (alerta) {
+            alerta.style.display = 'none';
+        }
+    }, 10000); // 4000 milisegundos = 4 segundos
+</script>
     <?php
     include_once "../Estructura/footer.php";
     ?>

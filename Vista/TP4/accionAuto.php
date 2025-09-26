@@ -7,18 +7,23 @@ $controlAuto = new ABMAuto();
 if($datos["accion"]=="nuevo"){
     
     $salida = $controlAuto->nuevoAuto($datos);
+    header("Location: listaAuto.php?mensaje=".$salida["respuesta"]);
+   
+exit;
+
 }else if($datos["accion"]=="editar"){
-    $salida = $controlAuto->editarAuto($datos);
+    header("Location: listaAuto.php?mensaje=".$salida["respuesta"]);
+    exit;
 }
 
 
 ?>
-<div>
+<!-- <div>
     
     <p  class="text-center display-4"><?php echo $salida['respuesta']; ?></p>
     
     <a class="btn btn-primary" href="<?php echo $salida['link']; ?>">Ir</a>
-</div>
+</div> -->
 
 <?php
 ?>

@@ -5,7 +5,16 @@ $datos = data_submitted();
 $controlAuto = new AbmAuto();
 $datos["DniDuenio"]=$datos["NroDni"];
 $listaAuto = $controlAuto->buscar($datos);
+$volverBuscar = true;
 
+
+
+if(isset($datos["mensaje"])){
+?>
+<div class="my-2" id="mensaje-alert"> <?php echo $datos["mensaje"] ?></div>
+
+<?php
+}
 ?>
 <h3>Listado de Autos</h3>
 <table class="table table-striped table-hover mb-2">

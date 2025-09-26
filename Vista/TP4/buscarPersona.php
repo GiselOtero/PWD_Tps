@@ -13,7 +13,8 @@ include_once "../Estructura/cabecera.php";
                 </div>
                 <div class="form-group mt-2">
                     <input class="btn btn-primary" type="submit" value="Buscar">
-                    <a  class="btn btn-primary" type="btn" href="index.php">Menu</a>
+                    <input class="btn btn-danger" type="reset" value="Cancelar">
+                    <a  class="btn btn-secondary" type="btn" href="index.php">Menu</a>
                 </div>
             </form>
         </div>
